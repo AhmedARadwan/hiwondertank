@@ -1,0 +1,18 @@
+version: "2.3"
+services:
+  ros:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: "host"
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - UID
+    volumes:
+      - /tmp/.X11-unix
+      - /run/user/1000/gdm/Xauthority:/root/.Xauthority
+      - ./src:/home/ros_ws/src
+    privileged: true
+    ipc: host
+    tty: true
