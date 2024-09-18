@@ -11,6 +11,7 @@ services:
       - UID
     volumes:
       - /tmp/.X11-unix
+      - /dev/:/dev/
       - /run/user/1000/gdm/Xauthority:/root/.Xauthority
       - ./src:/home/ros_ws/src
     privileged: true

@@ -1,0 +1,11 @@
+<launch>
+    <!-- tank driver -->
+    <node pkg="hiwonder_tank_driver" type="tank_node.py" name="tank_driver"/>
+
+    <!-- keyboard controls -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="hiwonder_tank_teleop">
+        <remap from="cmd_vel" to="/tank/cmd_vel"/>
+        <param name="speed" value="50.0"/>
+        <param name="turn" value="10.0"/>
+    </node>
+</launch>

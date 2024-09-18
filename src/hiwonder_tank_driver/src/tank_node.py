@@ -8,7 +8,7 @@ import sys
 
 from geometry_msgs.msg import Twist, TwistStamped
 
-L = 0.15 # distance between left and right wheels
+L = 0.14258 # distance between left and right wheels
 TICKSPERDIST = 1111 # should be changed to actual value
 
 
