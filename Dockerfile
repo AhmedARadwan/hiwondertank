@@ -6,6 +6,7 @@ RUN apt install -y ros-noetic-rviz \
                    ros-noetic-jsk-rviz-plugins \
                    ros-noetic-velodyne-pointcloud \
                    ros-noetic-teleop-twist-keyboard \
+                   ros-noetic-pointcloud-to-laserscan \
                    python3-pip \
                    python3-pcl \
                    python3-smbus \
