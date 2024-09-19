@@ -6,8 +6,6 @@ import threading
 LEFTMOTOR = 0
 RIGHTMOTOR = 1
 
-TICKSTOMETER = 0.11 # should be changed to actual value
-
 MAXVALUE = 50
 MINVALUE = -50
 
@@ -73,9 +71,9 @@ class DifferentialDriveMotor:
         self.stop_thread = True
         if self.speed_thread:
             self.speed_thread.join()
- 
+    
     def get_speeds(self):
         return self.left_speed, self.right_speed
- 
+    
     def __del__(self):
         self.stop_speed_measurement()

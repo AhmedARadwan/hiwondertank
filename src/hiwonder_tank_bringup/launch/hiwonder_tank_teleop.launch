@@ -1,6 +1,6 @@
 <launch>
     <!-- tank driver -->
-    <node pkg="hiwonder_tank_driver" type="tank_node.py" name="tank_driver"/>
+    <node pkg="hiwonder_tank_driver" type="tank_node.py" name="tank_driver" output="screen"/>
 
     <!-- lidar -->
     <include file="$(find velodyne_pointcloud)/launch/VLP-32C_points.launch">
