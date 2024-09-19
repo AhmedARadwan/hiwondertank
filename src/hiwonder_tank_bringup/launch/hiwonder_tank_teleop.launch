@@ -5,16 +5,20 @@
     <!-- lidar -->
     <include file="$(find velodyne_pointcloud)/launch/VLP-32C_points.launch">
         <arg name="calibration" default="$(find velodyne_pointcloud)/params/VeloView-VLP-32C.yaml"/>
-        <arg name="device_ip" default="192.168.2.101" />
-        <arg name="frame_id" default="velodyne" />
-        <arg name="port" default="2367" />
-        <arg name="rpm" default="600.0" />
+        <arg name="device_ip" default="192.168.2.101"/>
+        <arg name="frame_id" default="velodyne"/>
+        <arg name="port" default="2367"/>
+        <arg name="rpm" default="600.0"/>
     </include>
+
+    <!-- imu -->
+    <rosparam command="load" file="$(find hiwonder_tank_bringup)/config/config.yml" />
+    <node name="witmotion_imu" pkg="witmotion_ros"  type="witmotion_ros_node"/>
 
     <!-- keyboard controls -->
     <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="hiwonder_tank_teleop" output="screen">
         <remap from="cmd_vel" to="/tank/cmd_vel"/>
-        <param name="speed" value="50.0"/>
+        <param name="speed" value="5.0"/>
         <param name="turn" value="10.0"/>
     </node>
 </launch>
